@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="@string/title"
+                android:textColor="@color/titleColor"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/bell" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="100dp">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05"
+                    android:id="@+id/gL"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95"
+                    android:id="@+id/gR"/>
+
+                <ImageView
+                    android:id="@+id/profileImg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_one"
+                    app:layout_constraintLeft_toLeftOf="@id/gL"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/userName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:fontFamily="@font/noto_sans_bold"
+                    android:text="@string/txt1"
+                    android:textColor="@color/titleColor"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toRightOf="@id/profileImg1"
+                    app:layout_constraintTop_toTopOf="@id/profileImg1" />
+
+                <ImageView
+                    android:id="@+id/verifiedTick"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:src="@drawable/small_check"
+                    app:layout_constraintBottom_toBottomOf="@id/userName1"
+                    app:layout_constraintLeft_toRightOf="@id/userName1"
+                    app:layout_constraintTop_toTopOf="@id/userName1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/check_small"
+                    app:layout_constraintBottom_toBottomOf="@id/verifiedTick"
+                    app:layout_constraintLeft_toLeftOf="@id/verifiedTick"
+                    app:layout_constraintRight_toRightOf="@id/verifiedTick"
+                    app:layout_constraintTop_toTopOf="@id/verifiedTick" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/txt2"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@id/verifiedTick"
+                    app:layout_constraintLeft_toRightOf="@id/verifiedTick"
+                    app:layout_constraintTop_toTopOf="@id/verifiedTick" />
+
+                <ImageView
+                    android:id="@+id/tagIcon"
+                    android:layout_width="58dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/curved_draw"
+                    app:layout_constraintRight_toRightOf="@id/gR"
+                    app:layout_constraintTop_toTopOf="@id/userName1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/txt3"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tagIcon"
+                    app:layout_constraintLeft_toLeftOf="@id/tagIcon"
+                    app:layout_constraintRight_toRightOf="@id/tagIcon"
+                    app:layout_constraintTop_toTopOf="@id/tagIcon" />
+
+                <TextView
+                    android:id="@+id/userDetialTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/txt4"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/userName1"
+                    app:layout_constraintTop_toBottomOf="@id/userName1" />
+
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="2dp"
+                    android:layout_height="2dp"
+                    android:background="@drawable/round"
+                    app:layout_constraintBottom_toBottomOf="@id/userDetialTxt"
+                    app:layout_constraintLeft_toRightOf="@id/userDetialTxt"
+                    app:layout_constraintRight_toLeftOf="@id/userDetailTxt2"
+                    app:layout_constraintTop_toTopOf="@id/userDetialTxt" />
+
+                <TextView
+                    android:id="@+id/userDetailTxt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/txt5"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="12sp"
+                    app:layout_constraintRight_toLeftOf="@id/verifiedTick"
+                    app:layout_constraintTop_toBottomOf="@id/userName1" />
+
+                <TextView
+                    android:id="@+id/titileTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/noto_sans_bold"
+                    android:text="@string/txt6"
+                    android:textAlignment="textStart"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="@id/gL"
+                    app:layout_constraintTop_toBottomOf="@id/userDetailTxt2" />
+
+                <TextView
+                    android:id="@+id/descTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:paddingEnd="8dp"
+                    android:textAlignment="textStart"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="@id/gL"
+                    app:layout_constraintTop_toBottomOf="@id/titileTxt" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/chipstext"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/chipsbg"
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="@color/chipsStroke"
+                    app:chipStrokeWidth="0.5dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gL"
+                    app:layout_constraintTop_toBottomOf="@id/descTxt" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/chipstext"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/chipsbg"
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="@color/chipsStroke"
+                    app:chipStrokeWidth="0.5dp"
+                    app:layout_constraintLeft_toRightOf="@id/chip1"
+                    app:layout_constraintRight_toLeftOf="@id/chip3"
+                    app:layout_constraintTop_toTopOf="@id/chip1" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/chipstext"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/chipsbg"
+
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="@color/chipsStroke"
+                    app:chipStrokeWidth="0.5dp"
+                    app:layout_constraintLeft_toRightOf="@id/chip2"
+                    app:layout_constraintRight_toLeftOf="@id/chip4"
+                    app:layout_constraintTop_toTopOf="@id/chip1" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/chipstext"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/chipsbg"
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="@color/chipsStroke"
+                    app:chipStrokeWidth="0.5dp"
+                    app:layout_constraintLeft_toRightOf="@id/chip3"
+                    app:layout_constraintRight_toRightOf="@id/gR"
+                    app:layout_constraintTop_toBottomOf="@id/descTxt" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/chipstext"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/chipsbg"
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="@color/chipsStroke"
+                    app:chipStrokeWidth="0.5dp"
+                    app:layout_constraintLeft_toLeftOf="@id/gL"
+                    app:layout_constraintTop_toBottomOf="@id/chip1" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/chipstext"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/chipsbg"
+                    app:chipCornerRadius="20dp"
+                    app:chipStrokeColor="@color/chipsStroke"
+                    app:chipStrokeWidth="0.5dp"
+                    app:layout_constraintLeft_toLeftOf="@id/chip2"
+                    app:layout_constraintTop_toBottomOf="@id/chip2"
+                    app:layout_constraintTop_toTopOf="@id/chip5" />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    app:layout_constraintTop_toBottomOf="@id/chip6"
+                    android:scaleType="fitXY"
+                    android:id="@+id/image"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart"
+                    app:layout_constraintTop_toBottomOf="@id/image"
+                    app:layout_constraintLeft_toLeftOf="@id/gL"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="22dp"
+                    android:id="@+id/heartIcon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/heartIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/heartIcon"
+                    android:layout_marginLeft="6dp"
+                    app:layout_constraintLeft_toRightOf="@id/heartIcon"
+                    android:text="5"
+                    android:id="@+id/likeCount"
+                    android:textColor="@color/txtcolor2grey"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/comment"
+                    app:layout_constraintTop_toBottomOf="@id/image"
+                    app:layout_constraintLeft_toRightOf="@id/likeCount"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:id="@+id/commentIcon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/commentIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/commentIcon"
+                    android:layout_marginLeft="6dp"
+                    app:layout_constraintLeft_toRightOf="@id/commentIcon"
+                    android:text="5"
+                    android:id="@+id/commentCount"
+                    android:textColor="@color/txtcolor2grey"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/save"
+                    app:layout_constraintTop_toBottomOf="@id/image"
+                    app:layout_constraintLeft_toRightOf="@id/commentCount"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:id="@+id/saveIcon"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dots"
+                    app:layout_constraintTop_toTopOf="@id/saveIcon"
+                    app:layout_constraintLeft_toRightOf="@id/saveIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/saveIcon"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/dotsIcon"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#F7F8FA"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/heartIcon"
+                    android:id="@+id/vie1"/>
+
+                <ImageView
+                    android:id="@+id/p2ProfileImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_one"
+                    app:layout_constraintLeft_toLeftOf="@id/gL"
+                    app:layout_constraintTop_toBottomOf="@id/vie1"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:id="@+id/p2UserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:fontFamily="@font/noto_sans_bold"
+                    android:text="@string/txt1"
+                    android:textColor="@color/titleColor"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toRightOf="@id/p2ProfileImg"
+                    app:layout_constraintTop_toTopOf="@id/p2ProfileImg" />
+
+
+                <ImageView
+                    android:id="@+id/p2verifiedTick"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:src="@drawable/small_check"
+                    app:layout_constraintBottom_toBottomOf="@id/p2UserName"
+                    app:layout_constraintLeft_toRightOf="@id/p2UserName"
+                    app:layout_constraintTop_toTopOf="@id/p2UserName" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/check_small"
+                    app:layout_constraintBottom_toBottomOf="@id/p2verifiedTick"
+                    app:layout_constraintLeft_toLeftOf="@id/p2verifiedTick"
+                    app:layout_constraintRight_toRightOf="@id/p2verifiedTick"
+                    app:layout_constraintTop_toTopOf="@id/p2verifiedTick" />
+
+                <TextView
+                    android:id="@+id/p2txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/txt2"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@id/p2verifiedTick"
+                    app:layout_constraintLeft_toRightOf="@id/p2verifiedTick"
+                    app:layout_constraintTop_toTopOf="@id/p2verifiedTick" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dots"
+                    app:layout_constraintTop_toBottomOf="@id/vie1"
+                    app:layout_constraintRight_toRightOf="@id/gR"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="16dp"
+                    android:id="@+id/dotMenu"/>
+
+                <TextView
+                    android:id="@+id/p2txt6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:paddingEnd="8dp"
+                    android:textAlignment="textStart"
+                    android:textSize="12sp"
+                    android:text="@string/txt10"
+                    app:layout_constraintLeft_toLeftOf="@id/p2UserName"
+                    app:layout_constraintRight_toRightOf="@+id/dotMenu"
+                    app:layout_constraintTop_toBottomOf="@id/p2UserName" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart"
+                    app:layout_constraintTop_toBottomOf="@id/p2txt6"
+                    app:layout_constraintLeft_toLeftOf="@id/p2txt6"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/comntheartIcon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/comntheartIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/comntheartIcon"
+                    android:layout_marginLeft="6dp"
+                    app:layout_constraintLeft_toRightOf="@id/comntheartIcon"
+                    android:text="5"
+                    android:id="@+id/comntlikeCount"
+                    android:textColor="@color/txtcolor2grey"
+                    android:textSize="12sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/comment"
+                    app:layout_constraintTop_toTopOf="@id/comntlikeCount"
+                    app:layout_constraintLeft_toRightOf="@id/comntlikeCount"
+                    app:layout_constraintBottom_toBottomOf="@+id/comntlikeCount"
+                    android:layout_marginLeft="16dp"
+                    android:id="@+id/cmntcommentIcon"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/cmntcommentIcon"
+                    app:layout_constraintBottom_toBottomOf="@id/cmntcommentIcon"
+                    android:layout_marginLeft="6dp"
+                    app:layout_constraintLeft_toRightOf="@id/cmntcommentIcon"
+                    android:text="5"
+                    android:id="@+id/cmntcommentCount"
+                    android:textColor="@color/txtcolor2grey"
+                    android:textSize="12sp"/>
+
+
+                <ImageView
+                    android:id="@+id/profileImg3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/p2"
+                    app:layout_constraintLeft_toLeftOf="@id/comntheartIcon"
+                    app:layout_constraintTop_toBottomOf="@id/comntheartIcon"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:id="@+id/p3UserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:fontFamily="@font/noto_sans_bold"
+                    android:text="@string/txt11"
+                    android:textColor="@color/txtcolor2black"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toRightOf="@id/profileImg3"
+                    app:layout_constraintTop_toTopOf="@id/profileImg3"
+                    app:layout_constraintBottom_toBottomOf="@id/profileImg3"/>
+
+                <TextView
+                    android:id="@+id/p3txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:text="@string/txt2"
+                    android:textColor="@color/txtColor1"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@id/p3UserName"
+                    app:layout_constraintLeft_toRightOf="@id/p3UserName"
+                    app:layout_constraintTop_toTopOf="@id/p3UserName" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dots"
+                    app:layout_constraintTop_toTopOf="@id/profileImg3"
+                    app:layout_constraintRight_toRightOf="@id/gR"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="16dp"
+                    android:id="@+id/dotMenu2"/>
+
+                <TextView
+                    android:id="@+id/p3txt6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/notosans_medium"
+                    android:paddingEnd="8dp"
+                    android:textAlignment="textStart"
+                    android:textSize="12sp"
+                    android:text="@string/txt12"
+                    android:textColor="@color/txtcolor"
+                    app:layout_constraintLeft_toLeftOf="@id/p3UserName"
+                    app:layout_constraintRight_toRightOf="@+id/dotMenu"
+                    app:layout_constraintTop_toBottomOf="@id/p3UserName" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/heart"
+                    app:layout_constraintTop_toBottomOf="@id/p3txt6"
+                    app:layout_constraintLeft_toLeftOf="@id/p3txt6"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/comntheartIcon2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/comntheartIcon2"
+                    app:layout_constraintBottom_toBottomOf="@id/comntheartIcon2"
+                    android:layout_marginLeft="6dp"
+                    app:layout_constraintLeft_toRightOf="@id/comntheartIcon2"
+                    android:text="5"
+                    android:id="@+id/comntlikeCount2"
+                    android:textColor="@color/txtcolor2grey"
+                    android:textSize="12sp"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#F7F8FA"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toTopOf="@id/bottomView"
+            android:id="@+id/vie2"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#F7F8FA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/bottomView"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/imagesmode"
+            app:layout_constraintTop_toTopOf="@id/bottomView"
+            app:layout_constraintBottom_toBottomOf="@id/bottomView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:id="@+id/b1"
+            android:layout_marginLeft="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt13"
+            app:layout_constraintTop_toTopOf="@id/bottomView"
+            app:layout_constraintBottom_toBottomOf="@id/bottomView"
+            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/b2"
+            android:layout_marginRight="16dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:fontFamily="@font/noto_sans"
+            android:text="@string/txt14"
+            android:textSize="12sp"
+            android:textColor="@color/txtcolor2grey"
+            app:layout_constraintBottom_toBottomOf="@id/bottomView"
+            app:layout_constraintLeft_toRightOf="@id/b1"
+            app:layout_constraintRight_toLeftOf="@id/b2"
+            app:layout_constraintTop_toTopOf="@id/bottomView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

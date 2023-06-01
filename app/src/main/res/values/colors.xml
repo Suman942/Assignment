@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="titleColor">#1D232B</color>
+    <color name="txtColor1">#919EB6</color>
+    <color name="greenish">#01B99F</color>
+    <color name="chipstext">#5A6B87</color>
+    <color name="chipsbg">#F7F8FA</color>
+    <color name="chipsStroke">#CED3DE</color>
+    <color name="txtcolor2grey">#AFB9CA</color>
+    <color name="txtcolor2black">#1D232B</color>
+    <color name="txtcolor">#313B49</color>
+
+</resources>
